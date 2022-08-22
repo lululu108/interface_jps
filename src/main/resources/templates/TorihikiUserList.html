@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="css/index2.css" th:href="@{/css/index2.css}" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript" src="/js/index.js"></script>
+
+	<div><p>取引先一覧</p></div>
+	<table class="list">
+	  <tbody><tr>
+		  <th class="r1" style="width: 5%">会員ID</th>
+  	    <th class="r1" style="width: 5%">パチンコ店ID</th>
+  	    <th class="r2" style="width: 20%">パチンコ店名</th>
+  	    <th class="r2" style="width: 12%">電話番号</th>
+  	    <th class="r2" style="width: 12%">郵便番号</th>
+  	    <th class="r3" style="width: 15%">住所（都道府県）</th>
+  		<th class="r3" style="width: 15%">住所（市町村）</th>
+  		<th class="r4" style="width: 5%">住所（番地）</th>
+	  </tr>
+	  <tr th:each="list:${list}">
+	    <td><a href="/torihikiuserlist" th:href="@{/torihikiuserlist}" th:text="${list.kaiinId}"></a></td>
+	    <td th:text="${list.ppNo}"></td>
+	     <td th:text="${list.ppNm}"></td>
+	    <td th:text="${list.telNo}"></td>
+	    <td th:text="${list.addNo}"></td>
+	    <td th:text="${list.add1}"></td>
+		<td th:text="${list.add2}"></td>
+		<td th:text="${list.add3}"></td>
+	  </tr>
+	</tbody></table>
+	<br>
+	<div class="button">
+		<a href="./newpt" class="btn-circle-flat">新規登録</a>
+	</div>
+</body>
+<html>

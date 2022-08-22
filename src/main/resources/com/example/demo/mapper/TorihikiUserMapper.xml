@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.TorihikiUserMapper">
+    <select id="selectAll" resultType="com.example.demo.memberclient_master.TorihikiUser">
+		SELECT kaiin_id as kaiinId
+		      ,pp_no as ppNo
+		      ,pp_name as ppNm
+		      ,tel_no as telNo
+		      ,add_no as addNo
+		      ,add1_name as add1
+		      ,add2_name as add2
+		      ,add3_name as add3
+		FROM jps_user.memberclient_master
+    </select>
+</mapper>
